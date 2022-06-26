@@ -13,13 +13,13 @@ variable "name" {
 variable "cidr_block" {
   description = "The CIDR block for the VPC. Default value should be overriden."
   type        = string
-  default     = "192.168.255.0/24"
+  default     = null
 }
 
 variable "instance_tenancy" {
   description = "A tenancy option for instances launched into the VPC"
   type        = string
-  default     = "default"
+  default     = null
 }
 
 variable "enable_dns_hostnames" {
@@ -56,4 +56,40 @@ variable "tags" {
   description = "A map of tags to add to all resources"
   type        = map(string)
   default     = {}
+}
+
+variable "ipv4_ipam_pool_id" {
+  description = "The ID of an IPv4 IPAM pool you want to use for allocating this VPC's CIDR."
+  type        = string
+  default     = null
+}
+
+variable "ipv4_netmask_length" {
+  description = "The network mask length related with ipv4_ipam_pool_id."
+  type        = number
+  default     = null
+}
+
+variable "ipv6_cidr_block" {
+  description = "IPv6 CIDR block to request from an IPAM Pool."
+  type        = string
+  default     = null
+}
+
+variable "ipv6_ipam_pool_id" {
+  description = "IPAM Pool ID for a IPv6 pool."
+  type        = string
+  default     = null
+}
+
+variable "ipv6_netmask_length" {
+  description = "Netmask length to request from IPAM Pool."
+  type        = string
+  default     = null
+}
+
+variable "ipv6_cidr_block_network_border_group" {
+  description = "Netmask length to request from IPAM Pool."
+  type        = string
+  default     = null
 }
