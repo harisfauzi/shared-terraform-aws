@@ -9,7 +9,7 @@ locals {
 resource "aws_subnet" "this" {
   count = local.create_this ? 1 : 0
 
-  vpc_id      = var.vpc_id
+  vpc_id                                          = var.vpc_id
   assign_ipv6_address_on_creation                 = var.assign_ipv6_address_on_creation
   availability_zone                               = var.availability_zone
   availability_zone_id                            = var.availability_zone_id
