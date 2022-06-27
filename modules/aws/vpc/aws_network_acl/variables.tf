@@ -14,23 +14,23 @@ variable "vpc_id" {
   description = "The VPC ID."
   type        = string
 }
-  subnet_ids  = var.subnet_ids
-  ingress     = var.ingress
-  egress      = var.egress
 
-variable "vpc_id" {
-  description = "The VPC ID."
-  type        = string
+variable "subnet_ids" {
+  description = "The list of subnet ids."
+  type        = list(string)
+  default     = null
 }
 
-variable "vpc_id" {
-  description = "The VPC ID."
-  type        = string
+variable "ingress" {
+  description = "The ingress rule."
+  type        = map(string)
+  default     = null
 }
 
-variable "vpc_id" {
-  description = "The VPC ID."
-  type        = string
+variable "egress" {
+  description = "The egress rule."
+  type        = map(string)
+  default     = null
 }
 
 variable "tags" {
