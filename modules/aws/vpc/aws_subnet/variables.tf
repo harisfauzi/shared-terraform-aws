@@ -109,11 +109,11 @@ variable "tags" {
 variable "network_acl_id" {
   description = "The Network ACL ID."
   type        = string
-  default     = null
+  default     = ""
 }
 
 variable "route_table_id" {
   description = "The Route Table ID."
   type        = string
-  default     = null
+  default     = ""
 }

@@ -32,13 +32,13 @@ resource "aws_subnet" "this" {
 }
 
 resource "aws_network_acl_association" "this" {
-  count           = var.network_acl_id ? 1 : 0
+  count           = var.network_acl_id == "" ? 0 : 1
   network_acl_id  = var.network_acl_id
   subnet_id       = aws_subnet.this[0].id
 }
 
 resource "aws_route_table_association" "this" {
-  count           = var.route_table_id ? 1 : 0
+  count           = var.route_table_id == "" ? 0 : 1 
   route_table_id  = var.route_table_id
   subnet_id       = aws_subnet.this[0].id
 }
