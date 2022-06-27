@@ -30,3 +30,15 @@ resource "aws_subnet" "this" {
     var.tags,
   )
 }
+
+resource "aws_network_acl_association" "this" {
+  count           = var.network_acl_id ? 1 : 0
+  network_acl_id  = var.network_acl_id
+  subnet_id       = aws_subnet.this.id
+}
+
+resource "aws_route_table_association" "this" {
+  count           = local.route_table_id ? 1 : 0
+  subnet_id       = aws_subnet.this.id
+  route_table_id  = var.route_table_id
+}

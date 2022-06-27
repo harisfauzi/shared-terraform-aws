@@ -104,3 +104,16 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+
+variable "network_acl_id" {
+  description = "The Network ACL ID."
+  type        = string
+  default     = null
+}
+
+variable "route_table_id" {
+  description = "The Route Table ID."
+  type        = string
+  default     = null
+}
