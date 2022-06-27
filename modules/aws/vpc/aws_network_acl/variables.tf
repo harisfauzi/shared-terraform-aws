@@ -1,11 +1,11 @@
 variable "create_this" {
-  description = "Controls if VPC should be created (it affects almost all resources)"
+  description = "Controls if Network ACL should be created (it affects almost all resources)"
   type        = bool
   default     = true
 }
 
 variable "name" {
-  description = "Route Table name"
+  description = "Network ACL name"
   type        = string
   default     = ""
 }

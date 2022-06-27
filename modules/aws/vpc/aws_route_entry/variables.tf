@@ -1,5 +1,5 @@
 variable "create_this" {
-  description = "Controls if VPC should be created (it affects almost all resources)"
+  description = "Controls if Route entry should be created (it affects almost all resources)"
   type        = bool
   default     = true
 }
