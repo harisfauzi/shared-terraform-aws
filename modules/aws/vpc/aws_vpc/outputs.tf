@@ -53,10 +53,10 @@ output "ipv6_association_id" {
   value       = try(aws_vpc.this[0].ipv6_association_id, "")
 }
 
-# output "ipv6_cidr_block" {
-#   description = "The IPv6 CIDR block"
-#   value       = try(aws_vpc.this[0].ipv6_cidr_block, "")
-# }
+output "ipv6_cidr_block" {
+  description = "The IPv6 CIDR block"
+  value       = try(aws_vpc.this[0].ipv6_cidr_block, "")
+}
 
 output "owner_id" {
   description = "The ID of the AWS account that owns the VPC"
