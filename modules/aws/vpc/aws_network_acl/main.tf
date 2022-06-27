@@ -6,7 +6,7 @@ locals {
 # Network ACL
 ################################################################################
 
-resource "aws_route_table" "this" {
+resource "aws_network_acl" "this" {
   count = local.create_this ? 1 : 0
 
   vpc_id  = var.vpc_id
