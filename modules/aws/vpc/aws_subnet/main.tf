@@ -38,7 +38,7 @@ resource "aws_network_acl_association" "this" {
 }
 
 resource "aws_route_table_association" "this" {
-  count           = local.route_table_id ? 1 : 0
+  count           = var.route_table_id ? 1 : 0
   route_table_id  = var.route_table_id
   subnet_id       = aws_subnet.this[0].id
 }
