@@ -23,14 +23,14 @@ variable "subnet_ids" {
 
 variable "ingress" {
   description = "The ingress rule."
-  type        = map(string)
-  default     = {}
+  type        = set(any)
+  default     = null
 }
 
 variable "egress" {
   description = "The egress rule."
-  type        = map(string)
-  default     = {}
+  type        = set(any)
+  default     = null
 }
 
 variable "tags" {
