@@ -26,13 +26,13 @@ variable "egresses" {
   type        = list(object({
     from_port         = number
     to_port           = number
-    cidr_blocks       = list(string)
-    description       = string
-    ipv6_cidr_blocks  = list(string)
-    prefix_list_ids   = list(string)
+    cidr_blocks       = optional(list(string))
+    description       = optional(string)
+    ipv6_cidr_blocks  = optional(list(string))
+    prefix_list_ids   = optional(list(string))
     protocol          = number
-    security_groups   = list(string)
-    self              = string
+    security_groups   = optional(list(string))
+    self              = optional(string)
   }))
   default     = []
 }
@@ -42,13 +42,13 @@ variable "ingresses" {
   type        = list(object({
     from_port         = number
     to_port           = number
-    cidr_blocks       = list(string)
-    description       = string
-    ipv6_cidr_blocks  = list(string)
-    prefix_list_ids   = list(string)
+    cidr_blocks       = optional(list(string))
+    description       = optional(string)
+    ipv6_cidr_blocks  = optional(list(string))
+    prefix_list_ids   = optional(list(string))
     protocol          = number
-    security_groups   = list(string)
-    self              = string
+    security_groups   = optional(list(string))
+    self              = optional(string)
   }))
   default     = []
 }
