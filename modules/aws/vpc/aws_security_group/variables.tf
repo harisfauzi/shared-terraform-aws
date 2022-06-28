@@ -20,17 +20,7 @@ variable "description" {
   type        = string
   default     = null
 }
-    content {
-      from_port         = egress.value["from_port"]
-      to_port           = egress.value["to_port"]
-      cidr_blocks       = egress.value["cidr_blocks"]
-      description       = egress.value["description"]
-      ipv6_cidr_blocks  = egress.value["ipv6_cidr_blocks"]
-      prefix_list_ids   = egress.value["prefix_list_ids"]
-      protocol          = egress.value["protocol"]
-      security_groups   = egress.value["security_groups"]
-      self              = egress.value["self"]
-    }
+
 variable "egresses" {
   description = "Configuration block for egress rules."
   type        = list(object({
