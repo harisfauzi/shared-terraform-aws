@@ -27,6 +27,15 @@ variable "force_detach_policies" {
   default     = null
 }
 
+variable "inline_policies" {
+  description = "Configuration block defining an exclusive set of IAM inline policies associated with the IAM role."
+  type = list(object({
+    name    = string,
+    policy  = string
+  }))
+  default   = []
+}
+
 variable "managed_policy_arns" {
   description = " Set of exclusive IAM managed policy ARNs to attach to the IAM role."
   type        = list(string)
