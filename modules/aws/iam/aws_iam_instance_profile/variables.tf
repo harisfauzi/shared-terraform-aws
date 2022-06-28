@@ -12,7 +12,8 @@ variable "name" {
 
 variable "role" {
   description = "Name of the role to add to the profile."
-  type        = null
+  type        = string
+  default     = null
 }
 
 variable "name_prefix" {
