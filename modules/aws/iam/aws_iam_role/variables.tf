@@ -29,7 +29,7 @@ variable "force_detach_policies" {
 
 variable "inline_policy" {
   description = "Configuration block defining an exclusive set of IAM inline policies associated with the IAM role."
-  type        = string
+  type        = any
   default     = null
 }
 
