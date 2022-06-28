@@ -20,16 +20,46 @@ variable "description" {
   type        = string
   default     = null
 }
-
+    content {
+      from_port         = egress.value["from_port"]
+      to_port           = egress.value["to_port"]
+      cidr_blocks       = egress.value["cidr_blocks"]
+      description       = egress.value["description"]
+      ipv6_cidr_blocks  = egress.value["ipv6_cidr_blocks"]
+      prefix_list_ids   = egress.value["prefix_list_ids"]
+      protocol          = egress.value["protocol"]
+      security_groups   = egress.value["security_groups"]
+      self              = egress.value["self"]
+    }
 variable "egresses" {
   description = "Configuration block for egress rules."
-  type        = list(any)
+  type        = list(object({
+    from_port         = number
+    to_port           = number
+    cidr_blocks       = list(string)
+    description       = string
+    ipv6_cidr_blocks  = list(string)
+    prefix_list_ids   = list(string)
+    protocol          = number
+    security_groups   = list(string)
+    self              = string
+  }))
   default     = []
 }
 
 variable "ingresses" {
   description = "Configuration block for ingress rules."
-  type        = list(any)
+  type        = list(object({
+    from_port         = number
+    to_port           = number
+    cidr_blocks       = list(string)
+    description       = string
+    ipv6_cidr_blocks  = list(string)
+    prefix_list_ids   = list(string)
+    protocol          = number
+    security_groups   = list(string)
+    self              = string
+  }))
   default     = []
 }
 
