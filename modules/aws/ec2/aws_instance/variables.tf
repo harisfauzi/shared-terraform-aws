@@ -30,14 +30,14 @@ variable "availability_zone" {
 
 variable "capacity_reservation_specification" {
   description = "capacity_reservation_specification"
-  type        = list(object({
+  type = list(object({
     capacity_reservation_preference = optional(string)
-    capacity_reservation_target     = optional(list(object({
+    capacity_reservation_target = optional(list(object({
       capacity_reservation_id                 = optional(string)
       capacity_reservation_resource_group_arn = optional(string)
     })))
   }))
-  default     = []
+  default = []
 }
 
 variable "cpu_core_count" {
@@ -54,10 +54,10 @@ variable "cpu_threads_per_core" {
 
 variable "credit_specification" {
   description = "credit_specification"
-  type        = list(object({
+  type = list(object({
     cpu_credits = optional(string)
   }))
-  default     = []
+  default = []
 }
 
 variable "disable_api_stop" {
@@ -74,7 +74,7 @@ variable "disable_api_termination" {
 
 variable "ebs_block_device" {
   description = "ebs_block_device"
-  type        = list(object({
+  type = list(object({
     delete_on_termination = optional(bool)
     device_name           = string
     encrypted             = optional(bool)
@@ -86,7 +86,7 @@ variable "ebs_block_device" {
     volume_size           = optional(number)
     volume_type           = optional(string)
   }))
-  default     = []
+  default = []
 }
 
 variable "ebs_optimized" {
@@ -97,20 +97,20 @@ variable "ebs_optimized" {
 
 variable "enclave_options" {
   description = "enclave_options"
-  type        = list(object({
+  type = list(object({
     enabled = optional(bool)
   }))
-  default     = []
+  default = []
 }
 
 variable "ephemeral_block_device" {
   description = "AMI/ImageId"
-  type        = list(object({
-    device_name       = optional(string)
-    no_device         = optional(bool)
-    virtual_name      = optional(string)
+  type = list(object({
+    device_name  = optional(string)
+    no_device    = optional(bool)
+    virtual_name = optional(string)
   }))
-  default     = []
+  default = []
 }
 
 variable "get_password_data" {
@@ -169,31 +169,31 @@ variable "key_name" {
 
 variable "launch_template" {
   description = "launch_template"
-  type        = list(object({
+  type = list(object({
     id      = optional(string)
     name    = optional(string)
     version = optional(string)
   }))
-  default     = []
+  default = []
 }
 
 variable "maintenance_options" {
   description = "maintenance_options"
-  type        = list(object({
+  type = list(object({
     auto_recovery = optional(string)
   }))
-  default     = []
+  default = []
 }
 
 variable "metadata_options" {
   description = "metadata_options"
-  type        = list(object({
+  type = list(object({
     http_endpoint               = optional(string)
     http_put_response_hop_limit = optional(number)
     http_tokens                 = optional(string)
     instance_metadata_tags      = optional(string)
   }))
-  default     = []
+  default = []
 }
 
 variable "monitoring" {
@@ -204,13 +204,13 @@ variable "monitoring" {
 
 variable "network_interface" {
   description = "network_interface"
-  type        = list(object({
+  type = list(object({
     delete_on_termination = optional(bool)
     device_index          = optional(number)
     network_card_index    = optional(number)
     network_interface_id  = optional(string)
   }))
-  default     = []
+  default = []
 }
 
 variable "placement_group" {
@@ -227,12 +227,12 @@ variable "placement_partition_number" {
 
 variable "private_dns_name_options" {
   description = "private_dns_name_options"
-  type        = list(object({
-    enable_resource_name_dns_aaaa_record  = optional(bool)
-    enable_resource_name_dns_a_record     = optional(bool)
-    hostname_type                         = optional(string)
+  type = list(object({
+    enable_resource_name_dns_aaaa_record = optional(bool)
+    enable_resource_name_dns_a_record    = optional(bool)
+    hostname_type                        = optional(string)
   }))
-  default     = []
+  default = []
 }
 
 variable "private_ip" {
@@ -243,7 +243,7 @@ variable "private_ip" {
 
 variable "root_block_device" {
   description = "root_block_device"
-  type        = list(object({
+  type = list(object({
     delete_on_termination = optional(bool)
     encrypted             = optional(bool)
     iops                  = optional(number)
@@ -253,7 +253,7 @@ variable "root_block_device" {
     volume_size           = optional(number)
     volume_type           = optional(string)
   }))
-  default     = []
+  default = []
 }
 
 variable "secondary_private_ips" {
