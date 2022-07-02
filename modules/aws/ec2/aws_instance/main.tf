@@ -6,7 +6,7 @@ locals {
 # EC2 Instance
 ################################################################################
 
-resource "aws_network_acl" "this" {
+resource "aws_instance" "this" {
   count = local.create_this ? 1 : 0
 
   ami                                 = var.ami
