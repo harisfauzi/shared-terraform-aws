@@ -72,7 +72,7 @@ variable "disable_api_termination" {
   default     = null
 }
 
-variable "ebs_block_devices" {
+variable "ebs_block_device" {
   description = "ebs_block_device"
   type        = list(object({
     delete_on_termination = optional(bool)

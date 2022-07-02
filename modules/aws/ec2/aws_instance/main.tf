@@ -76,7 +76,7 @@ resource "aws_instance" "this" {
   ipv6_addresses                        = var.ipv6_addresses
   key_name                              = var.key_name
   dynamic "launch_template" {
-    for_each = var.launch_templates
+    for_each = var.launch_template
     content {
       id                    = launch_template.value.id
       name                  = launch_template.value.name
