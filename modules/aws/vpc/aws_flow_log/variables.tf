@@ -72,12 +72,12 @@ variable "max_aggregation_interval" {
 
 variable "destination_options" {
   description = "destination_options"
-  type        = list(object({
-    file_format                 = optional(string)
-    hive_compatible_partitions  = optional(bool)
-    per_hour_partition          = optional(bool)
+  type = list(object({
+    file_format                = optional(string)
+    hive_compatible_partitions = optional(bool)
+    per_hour_partition         = optional(bool)
   }))
-  default     = []
+  default = []
 }
 
 variable "tags" {
