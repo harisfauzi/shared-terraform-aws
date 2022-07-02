@@ -1,5 +1,5 @@
 variable "create_this" {
-  description = "Controls if Network ACL should be created (it affects almost all resources)"
+  description = "Controls if Network ACL Rule should be created (it affects almost all resources)"
   type        = bool
   default     = true
 }

@@ -1,11 +1,11 @@
 variable "create_this" {
-  description = "Controls if Network ACL should be created (it affects almost all resources)"
+  description = "Controls if Subnet should be created (it affects almost all resources)"
   type        = bool
   default     = true
 }
 
 variable "name" {
-  description = "Network ACL name"
+  description = "Subnet name"
   type        = string
   default     = ""
 }

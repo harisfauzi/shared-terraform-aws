@@ -1,5 +1,5 @@
 variable "create_this" {
-  description = "Controls if Route Table should be created (it affects almost all resources)"
+  description = "Controls if Security Group should be created (it affects almost all resources)"
   type        = bool
   default     = true
 }
