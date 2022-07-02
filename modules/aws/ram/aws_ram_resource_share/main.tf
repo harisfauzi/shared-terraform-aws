@@ -18,3 +18,25 @@ resource "aws_ram_resource_share" "this" {
     var.tags,
   )
 }
+
+################################################################################
+# Resource Share Principals
+################################################################################
+
+resource "aws_ram_principal_association" "this" {
+  for_each = var.principal_arns
+
+  principal          = each.value
+  resource_share_arn = try(aws_ram_resource_share.this[0].arn, "")
+}
+
+################################################################################
+# Resource Share Resources
+################################################################################
+
+resource "aws_ram_resource_association" "this" {
+  for_each = var.resource_arns
+
+  resource_arn       = each.value
+  resource_share_arn = try(aws_ram_resource_share.this[0].arn, "")
+}

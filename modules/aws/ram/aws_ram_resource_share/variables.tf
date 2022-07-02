@@ -27,3 +27,15 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "principal_arns" {
+  description = "Principal ARNs to receive the share invitation."
+  type        = list(string)
+  default     = []
+}
+
+variable "resource_arns" {
+  description = "Resource ARNs to share."
+  type        = list(string)
+  default     = []
+}
