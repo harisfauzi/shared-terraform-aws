@@ -30,12 +30,12 @@ variable "tags" {
 
 variable "principal_arns" {
   description = "Principal ARNs to receive the share invitation."
-  type        = list(string)
+  type        = set(string)
   default     = []
 }
 
 variable "resource_arns" {
   description = "Resource ARNs to share."
-  type        = list(string)
+  type        = set(string)
   default     = []
 }
