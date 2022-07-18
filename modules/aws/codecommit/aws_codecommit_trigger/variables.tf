@@ -1,5 +1,5 @@
 variable "create_this" {
-  description = "Controls if IAM Role should be created (it affects almost all resources)"
+  description = "Controls if this resource should be created (it affects almost all resources)"
   type        = bool
   default     = true
 }
