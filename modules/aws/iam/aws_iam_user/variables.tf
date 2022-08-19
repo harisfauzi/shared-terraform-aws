@@ -24,7 +24,8 @@ variable "permissions_boundary" {
 
 variable "foce_destroy" {
   description = "When destroying this user, destroy even if it has non-Terraform-managed IAM access keys, login profile or MFA devices. "
-  type        = false
+  type        = bool
+  default     = false
 }
 
 variable "tags" {
