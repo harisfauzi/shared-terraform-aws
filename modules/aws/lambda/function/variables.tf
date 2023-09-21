@@ -7,7 +7,6 @@ variable "create_this" {
 variable "function_name" {
   description = "Unique name for your Lambda Function."
   type        = string
-  default     = null
 }
 
 variable "role" {
