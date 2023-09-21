@@ -6,7 +6,7 @@ locals {
 # Lambda Permission
 ################################################################################
 
-resource "aws_lambda_function" "this" {
+resource "aws_lambda_permission" "this" {
   count = local.create_this ? 1 : 0
 
   action                 = var.action
