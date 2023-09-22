@@ -22,8 +22,9 @@ jobs:
       - name: Checkout this repo
         uses: actions/checkout@v3
       - name: Check AWS credentials
-        run: |
-          aws sts get-caller-identity
+        uses: docker://amazon/aws-cli
+        with:
+            args: sts get-caller-identity
       - name: Run terraform check on environment/events
         run: |
           cd test/environment/events
